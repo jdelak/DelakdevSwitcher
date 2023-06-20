@@ -12,5 +12,12 @@ $products = {
 		url      : 'https://delakdev.fr/',
 		purchase : '#',
 	},
+	youtube : {
+		name     : 'Youtube',
+		tag      : '',
+		img      : 'http://i.imgur.com/hgp2v0H.jpg',
+		url      : 'https://youtube.com/',
+		purchase : '#',
+	},
 
 };

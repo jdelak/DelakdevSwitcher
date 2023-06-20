@@ -148,24 +148,7 @@ $productList.carouFredSel({
 	next       : '.products-next'
 });
 
-// On click, toggle product switcher
-$( '.product-switcher a' ).on( 'click', function() {
 
-	$body.toggleClass( 'toggle' );
-	
-	if ( ! $body.hasClass( 'toggle' ) ) {
-
-		setTimeout( 'switcher_iframe_height()', 210 );
-		setTimeout( 'switcher_iframe_height()', 310 );
-		setTimeout( 'switcher_iframe_height()', 410 );
-		setTimeout( 'switcher_iframe_height()', 1500 );
-		setTimeout( 'switcher_iframe_height()', 2500 );
-
-	}
-
-	return false;
-
-});
 
 // Hide preloader on iframe load
 $productIframe.load( function() {
@@ -176,6 +159,28 @@ $productIframe.load( function() {
 
 // Start the application
 $( document ).ready( function() {
+
+
+	// On click, toggle product switcher
+	$( '.product-switcher a' ).on( 'click', function() {
+
+		$body.toggleClass( 'toggle' );
+		
+		if ( ! $body.hasClass( 'toggle' ) ) {
+			$body.addClass('toggle');
+			setTimeout( 'switcher_iframe_height()', 210 );
+			setTimeout( 'switcher_iframe_height()', 310 );
+			setTimeout( 'switcher_iframe_height()', 410 );
+			setTimeout( 'switcher_iframe_height()', 1500 );
+			setTimeout( 'switcher_iframe_height()', 2500 );
+
+		} else {
+			$body.removeClass('toggle');
+		}
+
+		return false;
+
+	});
 
 	$current_product = location.hash.replace('#', '');
 
@@ -207,6 +212,8 @@ $( document ).ready( function() {
 		placement : 'auto bottom',
 		trigger   : 'hover'
 	});
+
+
 
 });
 
